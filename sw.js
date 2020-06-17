@@ -1,5 +1,5 @@
 const CACHE = "Base24";
-const precacheFiles = ["/index.html","/readme.html",
+const precacheFiles = ["/css/main.css","/css/settings.css","/fonts/Fascinate.woff2","/fonts/Kavivanar.woff2","/images/page/browsers/browser.png","/images/page/browsers/chrome.png","/images/page/browsers/chromium.png","/images/page/browsers/firefox.png","/images/page/browsers/ie.png","/images/page/browsers/ms-edge.png","/images/page/browsers/safari.png","/images/page/browsers/tor.png","/images/page/name.png","/scripts/navbar.js","/scripts/script.js","/scripts/settings.js","/index.html","/styles.html","/readme.html",
 ];
 
 /**

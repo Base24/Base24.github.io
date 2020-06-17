@@ -179,7 +179,23 @@ async function populateTemplates() { // eslint-disable-line no-unused-vars
 	let templates = templatesFromList(file);
 	let ul = document.getElementById("output");
 	for (let i = 0; i < templates.length; i++) {
-		ul.innerHTML += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.round(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
+		ul.innerHTML += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
+	}
+	let label = document.getElementById("input-label");
+	label.innerHTML = "Search: (showing " + templates.length + ")";
+}
+
+/**
+ * Get a list of random words from an online words-list
+ *
+ * @return {string[]} list of random words
+ */
+async function populateStyles() { // eslint-disable-line no-unused-vars
+	let file = await grabFile("https://cdn.jsdelivr.net/gh/Base24/base24-schemes-source@master/list.yaml")
+	let templates = templatesFromList(file);
+	let ul = document.getElementById("output");
+	for (let i = 0; i < templates.length; i++) {
+		ul.innerHTML += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
 	}
 	let label = document.getElementById("input-label");
 	label.innerHTML = "Search: (showing " + templates.length + ")";

@@ -23,4 +23,40 @@
 			"type": "image/png",
 			"purpose": "maskable"
 		}
-	]}
+	],
+	"shortcuts": [
+		{
+			"name": "Templates",
+			"url": "/index.html",
+			"icons": [
+				{
+					"src": "/images/shorticons/index.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
+			"name": "Styles",
+			"url": "/styles.html",
+			"icons": [
+				{
+					"src": "/images/shorticons/styles.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
+			"name": "README",
+			"url": "/readme.html",
+			"icons": [
+				{
+					"src": "/images/shorticons/readme.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		}
+	]
+}

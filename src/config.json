@@ -4,11 +4,59 @@
 		"projectColour": "#282C34",
 		"isNavigation": true,
 		"precacheFiles": [
-
+			{
+				"fileName": "css/main.css"
+			},
+			{
+				"fileName": "css/settings.css"
+			},
+			{
+				"fileName": "fonts/Fascinate.woff2"
+			},
+			{
+				"fileName": "fonts/Kavivanar.woff2"
+			},
+			{
+				"fileName": "images/page/browsers/browser.png"
+			},
+			{
+				"fileName": "images/page/browsers/chrome.png"
+			},
+			{
+				"fileName": "images/page/browsers/chromium.png"
+			},
+			{
+				"fileName": "images/page/browsers/firefox.png"
+			},
+			{
+				"fileName": "images/page/browsers/ie.png"
+			},
+			{
+				"fileName": "images/page/browsers/ms-edge.png"
+			},
+			{
+				"fileName": "images/page/browsers/safari.png"
+			},
+			{
+				"fileName": "images/page/browsers/tor.png"
+			},
+			{
+				"fileName": "images/page/name.png"
+			},
+			{
+				"fileName": "scripts/navbar.js"
+			},
+			{
+				"fileName": "scripts/script.js"
+			},
+			{
+				"fileName": "scripts/settings.js"
+			}
 		]
 	},
 	"files": [
 		"index.sections.html",
+		"styles.sections.html",
 		"readme.sections.html"
 	]
 }
