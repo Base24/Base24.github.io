@@ -673,7 +673,11 @@ audio {
 	color: #ABB2BF;
 }
 
-.c-accent--1, .c-accent--1 a, .c-accent--2, .c-accent--2 a, .c-accent--3, .c-accent--3 a {
+.c-accent--1, .c-accent--1 a {
+	color: #21252b;
+}
+
+.c-accent--2, .c-accent--2 a, .c-accent--3, .c-accent--3 a {
 	color: #282C34;
 }
 
