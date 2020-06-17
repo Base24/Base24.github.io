@@ -1,5 +1,5 @@
 const CACHE = "Base24";
-const precacheFiles = ["/undefined/index.html","/undefined/readme.html",
+const precacheFiles = ["/index.html","/readme.html",
 ];
 
 /**

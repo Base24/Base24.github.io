@@ -137,7 +137,7 @@ base.isShortcuts = base.shortcut.length > 0;
 // Add pages to precache files
 for (let index = 0; index < pages.length; index++) {
 	base.precacheFiles.push({
-		fileName: base.namespace + "/" + pages[index].pageUrl,
+		fileName: pages[index].pageUrl,
 	});
 }
 
