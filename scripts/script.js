@@ -12,7 +12,7 @@ function showToast(message) {
 	var toastText = toast.firstElementChild.firstElementChild;
 	toastText.innerText = message;
 	toast.classList.add("show");
-	setTimeout(function () {
+	setTimeout(function() {
 		toast.classList.remove("show");
 	}, TOAST_TIMER);
 	return;
@@ -33,7 +33,7 @@ function upload(files, targets) { // eslint-disable-line no-unused-vars
 		const file = files[index];
 		const reader = new FileReader();
 		reader.readAsText(file, "UTF-8");
-		reader.onload = function (event) {
+		reader.onload = function(event) {
 			const fileContents = event.target.result;
 			if (fileContents.length < MAX_FILE_SIZE) {
 				document.getElementById(targets[index]).value = fileContents;
@@ -175,12 +175,14 @@ function templatesFromList(list) {
  * @return {string[]} list of random words
  */
 async function populateTemplates() { // eslint-disable-line no-unused-vars
-	let file = await grabFile("https://cdn.jsdelivr.net/gh/Base24/base24-templates-source@master/list.yaml")
+	let file = await grabFile("https://cdn.jsdelivr.net/gh/Base24/base24-templates-source@master/list.yaml");
 	let templates = templatesFromList(file);
 	let ul = document.getElementById("output");
+	let appendContent = "";
 	for (let i = 0; i < templates.length; i++) {
-		ul.innerHTML += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
+		appendContent += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
 	}
+	ul.innerHTML = appendContent;
 	let label = document.getElementById("input-label");
 	label.innerHTML = "Search: (showing " + templates.length + ")";
 }
@@ -191,12 +193,14 @@ async function populateTemplates() { // eslint-disable-line no-unused-vars
  * @return {string[]} list of random words
  */
 async function populateStyles() { // eslint-disable-line no-unused-vars
-	let file = await grabFile("https://cdn.jsdelivr.net/gh/Base24/base24-schemes-source@master/list.yaml")
+	let file = await grabFile("https://cdn.jsdelivr.net/gh/Base24/base24-schemes-source@master/list.yaml");
 	let templates = templatesFromList(file);
 	let ul = document.getElementById("output");
+	let appendContent = "";
 	for (let i = 0; i < templates.length; i++) {
-		ul.innerHTML += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
+		appendContent += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
 	}
+	ul.innerHTML = appendContent;
 	let label = document.getElementById("input-label");
 	label.innerHTML = "Search: (showing " + templates.length + ")";
 }
