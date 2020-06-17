@@ -131,7 +131,7 @@ function search() { // eslint-disable-line no-unused-vars
 	let filter = input.value.toUpperCase();
 	let ul = document.getElementById("output");
 	let li = ul.getElementsByTagName("li");
-
+	let shown = 0;
 	// Loop through all list items, and hide those who don't match the search
 	// query
 	for (let i = 0; i < li.length; i++) {
@@ -139,10 +139,13 @@ function search() { // eslint-disable-line no-unused-vars
 		txtValue = a.textContent || a.innerText;
 		if (txtValue.toUpperCase().indexOf(filter) > -1) {
 			li[i].style.display = "";
+			shown += 1;
 		} else {
 			li[i].style.display = "none";
 		}
 	}
+	let label = document.getElementById("input-label");
+	label.innerHTML = "Search: (showing " + shown + ")";
 }
 
 
@@ -178,6 +181,8 @@ async function populateTemplates() { // eslint-disable-line no-unused-vars
 	for (let i = 0; i < templates.length; i++) {
 		ul.innerHTML += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.round(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
 	}
+	let label = document.getElementById("input-label");
+	label.innerHTML = "Search: (showing " + templates.length + ")";
 }
 
 /**
