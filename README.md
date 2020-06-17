@@ -1,41 +1,44 @@
-[![Github top language](https://img.shields.io/github/languages/top/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../)
-[![Codacy grade](https://img.shields.io/codacy/grade/bf0f8cf278974ba6b48770e5fc3d3eff.svg?style=for-the-badge)](https://www.codacy.com/gh/FHPWA/fhpwa.github.io)
-[![Repository size](https://img.shields.io/github/repo-size/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../)
-[![Issues](https://img.shields.io/github/issues/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../issues)
-[![License](https://img.shields.io/github/license/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](/LICENSE.md)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../commits/master)
-[![Last commit](https://img.shields.io/github/last-commit/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../commits/master)
+[![Github top language](https://img.shields.io/github/languages/top/Base24/Base24.github.io.svg?style=for-the-badge)](../../)
+[![Codacy grade](https://img.shields.io/codacy/grade/bf0f8cf278974ba6b48770e5fc3d3eff.svg?style=for-the-badge)](https://www.codacy.com/gh/Base24/Base24.github.io)
+[![Repository size](https://img.shields.io/github/repo-size/Base24/Base24.github.io.svg?style=for-the-badge)](../../)
+[![Issues](https://img.shields.io/github/issues/Base24/Base24.github.io.svg?style=for-the-badge)](../../issues)
+[![License](https://img.shields.io/github/license/Base24/Base24.github.io.svg?style=for-the-badge)](/LICENSE.md)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/Base24/Base24.github.io.svg?style=for-the-badge)](../../commits/master)
+[![Last commit](https://img.shields.io/github/last-commit/Base24/Base24.github.io.svg?style=for-the-badge)](../../commits/master)
 
-# Base24.com
+<!-- omit in TOC -->
+# Base24.github.io
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
-Base24 App Launcher provides links to web-based projects at
-https://Base24.com/home. Holds common CSS and JS used by
-other web projects.
+Search for templates and schemes and link to projects.
+
+
+- [Language information](#language-information)
+- [Download](#download)
+	- [Clone](#clone)
+		- [Using The Command Line](#using-the-command-line)
+		- [Using GitHub Desktop](#using-github-desktop)
+	- [Download Zip File](#download-zip-file)
+- [Community Files](#community-files)
+	- [Licence](#licence)
+	- [Changelog](#changelog)
+	- [Code of Conduct](#code-of-conduct)
+	- [Contributing](#contributing)
+	- [Security](#security)
+	- [Support](#support)
+- [Screenshots](#screenshots)
+	- [Desktop](#desktop)
+	- [Mobile](#mobile)
+	- [Themes](#themes)
+- [Browser Support](#browser-support)
+	- [Supported](#supported)
+	- [Unsupported](#unsupported)
 
 
 ## Language information
-Base24.com is built with HTML5 and CSS3
+Base24.github.io is built with JS, HTML5 and CSS3
 
-
-## commonsrc
-Contains templates that are can be grabbed by other projects. It seems sensible
-to keep them here to ease maintainability. See commonsrc.js for a few examples
-of how these can be used.
-
-Alternatively, if you'd rather hit the ground running, run the following at the
-root of your project.
-```bash
-wget https://Base24.com/commonsrc/build.js
-```
-
-Be sure to include the template files under src/ and a config for base and the
-list of page templates in the order desired.
-
-
-## Changelog
-See the [CHANGELOG](/CHANGELOG.md) for more information.
 
 
 ## Download
@@ -65,10 +68,60 @@ More information can be found at https://help.github.com/en/desktop/contributing
 3. Copy/ move to the desired location
 
 
-## Licence
+## Community Files
+### Licence
 MIT License
-Copyright (c) Kieran W
+Copyright (c) Base24
 (See the [LICENSE](/LICENSE.md) for more information.)
+
+### Changelog
+See the [Changelog](/CHANGELOG.md) for more information.
+
+### Code of Conduct
+In the interest of fostering an open and welcoming environment, we
+as contributors and maintainers pledge to make participation in our
+project and our community a harassment-free experience for everyone.
+Please see the
+[Code of Conduct](https://github.com/Base24/.github/blob/master/CODE_OF_CONDUCT.md) for more information.
+
+### Contributing
+Contributions are welcome, please see the [Contributing Guidelines](https://github.com/Base24/.github/blob/master/CONTRIBUTING.md) for more information.
+
+### Security
+Thank you for improving the security of the project, please see the [Security Policy](https://github.com/Base24/.github/blob/master/SECURITY.md) for more information.
+
+### Support
+Thank you for using this project, I hope it is of use to you. Please be aware that
+those involved with the project often do so for fun along with other commitments
+(such as work, family, etc). Please see the [Support Policy](https://github.com/Base24/.github/blob/master/SUPPORT.md) for more information.
+
+
+## Screenshots
+
+### Desktop
+|Screenshots|
+|:-:|
+| <img src="readme-assets/screenshots/desktop/screenshot-1.png" alt="Screenshot 1" width="600"> |
+| <img src="readme-assets/screenshots/desktop/screenshot-2.png" alt="Screenshot 2" width="600"> |
+| <img src="readme-assets/screenshots/desktop/screenshot-3.png" alt="Screenshot 3" width="600"> |
+
+
+
+### Mobile
+|Screenshots| |
+|:-:|:-:|
+| <img src="readme-assets/screenshots/mobile/screenshot-1.png" alt="Screenshot 1" width="300"> | <img src="readme-assets/screenshots/mobile/screenshot-2.png" alt="Screenshot 2" width="300"> |
+| <img src="readme-assets/screenshots/mobile/screenshot-3.png" alt="Screenshot 3" width="300"> | <img src="readme-assets/screenshots/mobile/screenshot-4.png" alt="Screenshot 4" width="300"> |
+
+
+
+### Themes
+|Light|Dark|Black|
+|:-:|:-:|:-:|
+| <img src="readme-assets/screenshots/themes/theme-1.png" alt="Theme 1" width="200"> | <img src="readme-assets/screenshots/themes/theme-2.png" alt="Theme 2" width="200"> | <img src="readme-assets/screenshots/themes/theme-3.png" alt="Theme 3" width="200"> |
+
+
+
 ## Browser Support
 
 ### Supported
@@ -113,28 +166,3 @@ TOR Browser
 Other Browsers
 
 <img src="readme-assets/browsers/browser.png" alt="Other Browsers" width="200">
-
-
-## Screenshots
-
-### Desktop
-|Screenshots|
-|:-:|
-| <img src="readme-assets/screenshots/desktop/screenshot-1.png" alt="Screenshot 1" width="600"> |
-| <img src="readme-assets/screenshots/desktop/screenshot-2.png" alt="Screenshot 2" width="600"> |
-| <img src="readme-assets/screenshots/desktop/screenshot-3.png" alt="Screenshot 3" width="600"> |
-
-
-
-### Mobile
-|Screenshots| |
-|:-:|:-:|
-| <img src="readme-assets/screenshots/mobile/screenshot-1.png" alt="Screenshot 1" width="300"> | <img src="readme-assets/screenshots/mobile/screenshot-2.png" alt="Screenshot 2" width="300"> |
-| <img src="readme-assets/screenshots/mobile/screenshot-3.png" alt="Screenshot 3" width="300"> | <img src="readme-assets/screenshots/mobile/screenshot-4.png" alt="Screenshot 4" width="300"> |
-
-
-
-### Themes
-|Light|Dark|Black|
-|:-:|:-:|:-:|
-| <img src="readme-assets/screenshots/themes/theme-1.png" alt="Theme 1" width="200"> | <img src="readme-assets/screenshots/themes/theme-2.png" alt="Theme 2" width="200"> | <img src="readme-assets/screenshots/themes/theme-3.png" alt="Theme 3" width="200"> |
