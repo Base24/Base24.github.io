@@ -1,5 +1,5 @@
 [![Github top language](https://img.shields.io/github/languages/top/Base24/Base24.github.io.svg?style=for-the-badge)](../../)
-[![Codacy grade](https://img.shields.io/codacy/grade/bf0f8cf278974ba6b48770e5fc3d3eff.svg?style=for-the-badge)](https://www.codacy.com/gh/Base24/Base24.github.io)
+[![Codacy grade](https://img.shields.io/codacy/grade/[proj-id].svg?style=for-the-badge)](https://www.codacy.com/gh/Base24/Base24.github.io)
 [![Repository size](https://img.shields.io/github/repo-size/Base24/Base24.github.io.svg?style=for-the-badge)](../../)
 [![Issues](https://img.shields.io/github/issues/Base24/Base24.github.io.svg?style=for-the-badge)](../../issues)
 [![License](https://img.shields.io/github/license/Base24/Base24.github.io.svg?style=for-the-badge)](/LICENSE.md)
