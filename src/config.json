@@ -1,7 +1,7 @@
 {
 	"base": {
 		"projectName": "Base24",
-		"projectColour": "#282C34",
+		"projectColour": "#fbfdfa",
 		"isNavigation": true,
 		"precacheFiles": [
 			{
