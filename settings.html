@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css">
+
+	<script>
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register("/sw.js", { scope: "/" });
+		}
+		/* read data from local storage */
+		let settingData = JSON.parse(localStorage.getItem('com.base24'));
+		const rootStyles = document.styleSheets[0].cssRules[0].style;
+		const darkStyles = document.styleSheets[0].cssRules[1].cssRules[0].style;
+		rootStyles.setProperty("--text-mod", (settingData.textSize.size ? settingData.textSize.size : "1"))
+		if (settingData.theme.name !== "auto") {
+			rootStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#FAFAFA"))
+			rootStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#EAEAEB"))
+			rootStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#383A42"))
+			darkStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#181A1F"))
+			darkStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#282C34"))
+			darkStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#ABB2BF"))
+			rootStyles.setProperty("--var-c-black", (settingData.theme.cBlack ? settingData.theme.cBlack : "0"))
+		}
+	</script>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!--Android app icon-->
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#e16974" />
+
+	<!--iOS touch icon-->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/appicons/square-180.png">
+
+	<!--Bookmark, Browser favicon-->
+	<link rel="icon" type="image/png" sizes="256x256" href="images/appicons/squircle-256.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/appicons/squircle-256.png">
+
+	<!--Windows 8, 10 tile -->
+	<meta name="msapplication-TileColor" content="#e16974">
+	<meta name="msapplication-TileImage" sizes="150x150" content="images/appicons/square-180.png">
+	<meta name="msapplication-starturl" content="/">
+
+	<!--Title-->
+	<title>Base24 Settings</title>
+
+
+</head>
+
+<body>
+
+	<div class="section--app-bar c-accent--2 border">
+
+		<div class="app-bar">
+			<div class="section__content">
+				<div class="left">
+					<h1>Base24</h1>
+				</div>
+				<a href="#" class="right" onclick="window.history.back()">
+
+						<h1>&#xf47d;</h1>
+						</a>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="buffer--app-bar">
+	</div>
+
+	<div id="js-toast">
+		<div>
+			<p id="js-toast__text" class="c-toast"></p>
+		</div>
+	</div>
+
+	<div class="section c-primary">
+		<div class="section__content">
+			<h1>Settings</h1>
+
+		</div>
+	</div>
+
+	<div class="section c-secondary">
+		<div class="section__content">
+			<h2>Theme:</h2>
+			<div class="row">
+				<div class="icon icon--grid-xl">
+					<label class="css-radio" for="light">
+						Light Theme
+						<input type="radio" name="themeR" value="1" id="light" checked="checked" onclick="saveTheme()">
+						<span class="check-mark"></span>
+						<div class="setting-preview">
+							<div class="section__content--settings primary--light">
+								<h2>The quick brown fox</h2>
+							</div>
+							<div class="section__content--settings secondary--light">
+								<p>The quick brown fox jumps over the lazy dog</p>
+							</div>
+						</div>
+					</label>
+
+				</div>
+				<div class="icon icon--grid-xl">
+					<label class="css-radio" for="dark">
+						Dark Theme
+						<input type="radio" name="themeR" value="2" id="dark" onclick="saveTheme()">
+						<span class="check-mark"></span>
+						<div class="setting-preview">
+							<div class="section__content--settings primary--dark">
+								<h2>The quick brown fox</h2>
+							</div>
+							<div class="section__content--settings secondary--dark">
+								<p>The quick brown fox jumps over the lazy dog</p>
+							</div>
+						</div>
+					</label>
+
+				</div>
+
+				<div class="icon icon--grid-xl">
+					<label class="css-radio" for="black">
+						Black Theme
+						<input type="radio" name="themeR" value="3" id="black" onclick="saveTheme()">
+						<span class="check-mark"></span>
+						<div class="setting-preview">
+							<div class="section__content--settings primary--black">
+								<h2>The quick brown fox</h2>
+							</div>
+							<div class="section__content--settings secondary--black">
+								<p>The quick brown fox jumps over the lazy dog</p>
+							</div>
+						</div>
+					</label>
+
+				</div>
+				<div class="icon icon--grid-xl">
+					<label class="css-radio" for="auto">
+						Automatic Theme
+						<input type="radio" name="themeR" value="4" id="auto" onclick="saveTheme()">
+						<span class="check-mark"></span>
+						<div class="pair setting-preview">
+							<div>
+								<div class="section__content--settings primary--auto-left">
+									<h2>&#127772; The quick brown fox</h2>
+								</div>
+								<div class="section__content--settings secondary--auto-left">
+									<p>The quick brown fox jumps over the lazy dog</p>
+								</div>
+							</div>
+							<div>
+								<div class="section__content--settings primary--auto-right">
+									<h2>&#127774; The quick brown fox</h2>
+								</div>
+								<div class="section__content--settings secondary--auto-right">
+									<p>The quick brown fox jumps over the lazy dog</p>
+								</div>
+							</div>
+						</div>
+					</label>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section c-primary">
+		<div class="section__content">
+			<h2>Text Size:</h2>
+			<div class="row">
+				<div class="icon icon--grid-xl">
+					<label class="css-radio" for="small">
+						Small
+						<input type="radio" name="textR" value="1" id="small" checked="checked" onclick="saveText()">
+						<span class="check-mark"></span>
+						<div class="setting-preview text--small">
+							<div class="section section__content--settings c-primary">
+								<h2>The quick brown fox</h2>
+							</div>
+							<div class="section section__content--settings c-secondary">
+								<p>The quick brown fox jumps over the lazy dog</p>
+							</div>
+						</div>
+					</label>
+
+				</div>
+				<div class="icon icon--grid-xl">
+					<label class="css-radio" for="med">
+						Medium
+						<input type="radio" name="textR" value="2" id="med" onclick="saveText()">
+						<span class="check-mark"></span>
+						<div class="setting-preview text--med">
+							<div class="section section__content--settings c-primary">
+								<h2>The quick brown fox</h2>
+							</div>
+							<div class="section section__content--settings c-secondary">
+								<p>The quick brown fox jumps over the lazy dog</p>
+							</div>
+						</div>
+					</label>
+
+				</div>
+				<div class="icon icon--grid-xl">
+					<label class="css-radio" for="large">
+						Large
+						<input type="radio" name="textR" value="3" id="large" onclick="saveText()">
+						<span class="check-mark"></span>
+						<div class="setting-preview text--large">
+							<div class="section section__content--settings c-primary">
+								<h2>The quick brown fox</h2>
+							</div>
+							<div class="section section__content--settings c-secondary">
+								<p>The quick brown fox jumps over the lazy dog</p>
+							</div>
+						</div>
+					</label>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="app-bar c-accent--2  border">
+		<div class="section__content">
+			<h3 style="width: 100%; text-align: center;">Made with ❤ - MIT Base24</h3>
+		</div>
+	</div>
+
+
+
+	<script src="scripts/script.js"></script>
+
+	<script src="scripts/settings.js"></script>
+
+</body>
+
+</html>

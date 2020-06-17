@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script>
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register("/sw.js", { scope: "/" });
+		}
+		/* read data from local storage and set css vars*/
+		let settingData = JSON.parse(localStorage.getItem('com.base24'));
+		const rootStyles = document.styleSheets[0].cssRules[0].style;
+		const darkStyles = document.styleSheets[0].cssRules[1].cssRules[0].style;
+		rootStyles.setProperty("--text-mod", (settingData.textSize.size ? settingData.textSize.size : "1"))
+		if (settingData.theme.name !== "auto"){
+			rootStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#FAFAFA"))
+			rootStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#EAEAEB"))
+			rootStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#383A42"))
+			darkStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#181A1F"))
+			darkStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#282C34"))
+			darkStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#ABB2BF"))
+			rootStyles.setProperty("--var-c-black", (settingData.theme.cBlack ? settingData.theme.cBlack : "0"))
+		}
+	</script>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!--Android app icon-->
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#e16974" />
+
+	<!--iOS touch icon-->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/appicons/square-180.png">
+
+	<!--Bookmark, Browser favicon-->
+	<link rel="icon" type="image/png" sizes="256x256" href="images/appicons/squircle-256.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/appicons/squircle-256.png">
+
+	<!--Windows 8, 10 tile -->
+	<meta name="msapplication-TileColor" content="#e16974">
+	<meta name="msapplication-TileImage" sizes="150x150" content="images/appicons/square-180.png">
+	<meta name="msapplication-starturl" content="/">
+
+	<!--Title-->
+	<title>Base24 About</title>
+
+
+</head>
+
+<body>
+
+	<div class="section--app-bar c-accent--1 border">
+
+		<div class="app-bar">
+			<div class="section__content">
+				<div class="left">
+					<h1>Base24</h1>
+				</div>
+				<a href="#" class="right" onclick="window.history.back()">
+
+						<h1>&#xf47d;</h1>
+						</a>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="buffer--app-bar">
+	</div>
+
+	<div class="c-toast" id="js-toast">
+		<p id="toast-text"></p>
+	</div>
+
+	<div class="section c-primary">
+		<div class="section__content">
+			<h1>About</h1>
+				<h2>Base24</h2>
+				<p>The nexus for all things Base24... Provides links to base24 projects, information on projects and supported browsers (see below) and a settings menu with themes and text size options.</p>
+
+		</div>
+	</div>
+
+
+	<div class="section c-secondary">
+		<div class="section__content">
+
+			<h1>Browsers</h1>
+			<h2>Supported</h2>
+			<p>Base24 PWA is built with the following browsers in mind:</p>
+			<div class="row ">
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/chrome.png" alt="Google Chrome">
+					<p>Google Chrome</p>
+				</div>
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/chromium.png" alt="Chromium Based Browsers">
+					<p>Chromium Based Browsers</p>
+				</div>
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/safari.png" alt="Safari">
+					<p>Safari</p>
+				</div>
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/edge.png" alt="Microsoft Edge (Chromium)">
+					<p>Microsoft Edge (Chromium)</p>
+				</div>
+			</div>
+
+			<h2>Unsupported</h2>
+			<p>Base24 PWA is not designed for the following browsers (though they may still run as expected in some cases, such as on Firefox). Functionality and visuals may not work as expected:</p>
+			<div class="row ">
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/firefox.png" alt="Firefox">
+					<p>Firefox</p>
+				</div>
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/ms-edge.png" alt="Microsoft Edge (EdgeHTML)">
+					<p>Microsoft Edge (EdgeHTML)</p>
+				</div>
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/ie.png" alt="Internet Explorer">
+					<p>Internet Explorer</p>
+				</div>
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/tor.png" alt="TOR">
+					<p>TOR Browser</p>
+				</div>
+				<div class="icon icon--grid-l">
+					<img src="images/page/browsers/browser.png" alt="Other Browsers">
+					<p>Other Browsers</p>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+
+	<div class="app-bar c-accent--1  border">
+		<div class="section__content">
+			<h3 style="width: 100%; text-align: center;">Made with ❤ - MIT Base24</h3>
+		</div>
+	</div>
+
+
+
+
+	<script src="scripts/script.js"></script>
+
+
+</body>
+
+</html>

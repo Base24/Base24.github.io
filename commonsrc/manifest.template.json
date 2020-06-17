@@ -1,0 +1,43 @@
+{
+	"name": "{{projectName}}",
+	"short_name": "{{projectName}}",
+	"lang": "en-GB",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#000000",
+	"theme_color": "{{projectColour}}",
+	"icons": [
+		{
+			"src": "/images/appicons/round-192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/images/appicons/round-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		},
+		{
+			"src": "/images/appicons/mask.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	]{{#isShortcuts}},
+	"shortcuts": [
+		{{#shortcut}}
+		{
+			"name": "{{name}}",
+			"url": "/{{link}}",
+			"icons": [
+				{
+					"src": "/images/shorticons/{{icon}}",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{{/shortcut}}
+	]
+	{{/isShortcuts}}
+}

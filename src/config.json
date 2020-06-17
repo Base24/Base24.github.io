@@ -1,0 +1,14 @@
+{
+	"base": {
+		"projectName": "Base24",
+		"projectColour": "#282C34",
+		"isNavigation": true,
+		"precacheFiles": [
+
+		]
+	},
+	"files": [
+		"index.sections.html",
+		"readme.sections.html"
+	]
+}

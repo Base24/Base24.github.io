@@ -1,0 +1,96 @@
+<title>README</title>
+<section>
+
+	<h1>Reason for this repo</h1>
+	<p>Base16 doesn't provide bright colours that are used in terminal emulators. e.g. bright red. Base24 does. In
+		addition to this, Base24 provides darker background variants. This will also be part of a GitHub organization.
+	</p>
+
+
+	<h1>Compatibility</h1>
+	<p>The aim of this project is to offer compatibility with base16. The only limitation is that a base24 builder is
+		needed for base24 templates.</p>
+
+	<table>
+		<tr>
+			<th>Theme</th>
+			<th>=></th>
+			<th>Template</th>
+			<th>Base16 Builder</th>
+			<th>Base24 Builder</th>
+		</tr>
+		<tr>
+			<td>Base16</td>
+			<td>=></td>
+			<td>Base16</td>
+			<td>✔</td>
+			<td>✔</td>
+		</tr>
+		<tr>
+			<td>Base24</td>
+			<td>=></td>
+			<td>Base16</td>
+			<td>✔</td>
+			<td>✔</td>
+		</tr>
+		<tr>
+			<td>Base16</td>
+			<td>=></td>
+			<td>Base24</td>
+			<td>❌</td>
+			<td>✔</td>
+		</tr>
+		<tr>
+			<td>Base24</td>
+			<td>=></td>
+			<td>Base24</td>
+			<td>❌</td>
+			<td>✔</td>
+		</tr>
+	</table>
+
+
+	<p>Thank you to <a href="https://github.com/chriskempson/base16/">https://github.com/chriskempson/base16/</a> (MIT)
+		for Base16</p>
+
+	<h1>Why Base24/ Base16 is useful</h1>
+	<p>Base24/ Base16 can be used to easily generate your favourite theme for your favourite application. Many of the
+		template repositories provide theme files that you can copy/ import into said application.</p>
+
+	<h1>Documentation</h1>
+	<ul>
+	<li><a href="https://github.com/Base24/base24/blob/master/styling.md">Styling Guidelines</a></li>
+		<li><a href="https://github.com/Base24/base24/blob/master/builder.md">Builder Guidelines</a></li>
+			<li><a href="https://github.com/Base24/base24/blob/master/file.md">File Guidelines</a></li>
+				<li><a href=https://github.com/Base24/base24/blob/master/roadmap.md"">Roadmap/ TODO</a></li>
+</ul>
+
+	<h1>Template Repositories</h1>
+	<p>To add your own template, submit a pull request to URL. Repository
+		naming scheme: base24-[template-name] (with dashes as separators).</p>
+
+	<h1>Scheme Repositories</h1>
+	<p>To add your own scheme, submit a pull request to URL. Repository naming
+		scheme: base24-[scheme-name]-scheme (with dashes as separators).</p>
+
+	<h1>Builder Repositories</h1>
+	<p>Repository naming scheme: base24-builder-[language] (with dashes as separators). The separate headings are the
+		latest versions of the spec supported by each builder.</p>
+
+	<h2>Base24 0.1.0 (Feb 2020)</h2>
+	<p>base00 through base0F are identical to base16. See the table below for the Base24 fall-backs</p>
+
+
+	<table>
+		<tr><th>Base24</th><th>Base16</th></tr>
+		<tr><td>Base10</td><td>Base00</td></tr>
+		<tr><td>Base11</td><td>Base00</td></tr>
+		<tr><td>Base12</td><td>Base08</td></tr>
+		<tr><td>Base13</td><td>Base0A</td></tr>
+		<tr><td>Base14</td><td>Base0B</td></tr>
+		<tr><td>Base15</td><td>Base0C</td></tr>
+		<tr><td>Base16</td><td>Base0D</td></tr>
+		<tr><td>Base17</td><td>Base0E</td></tr>
+	</table>
+
+</section>

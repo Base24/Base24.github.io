@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+	<link rel="preload" href="fonts/Fascinate.woff2" as="font" type="font/woff2">
+	<link rel="preload" href="fonts/Kavivanar.woff2" as="font" type="font/woff2">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script>
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register("/sw.js", { scope: "/" });
+		}
+		/* read data from local storage and set css vars*/
+		let settingData = JSON.parse(localStorage.getItem('com.base24'));
+		const rootStyles = document.styleSheets[0].cssRules[0].style;
+		const darkStyles = document.styleSheets[0].cssRules[1].cssRules[0].style;
+		rootStyles.setProperty("--text-mod", (settingData.textSize.size ? settingData.textSize.size : "1"))
+		if (settingData.theme.name !== "auto"){
+			rootStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#FAFAFA"))
+			rootStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#EAEAEB"))
+			rootStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#383A42"))
+			darkStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#181A1F"))
+			darkStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#282C34"))
+			darkStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#ABB2BF"))
+			rootStyles.setProperty("--var-c-black", (settingData.theme.cBlack ? settingData.theme.cBlack : "0"))
+		}
+	</script>
+
+	<meta name="Description" content="Author: Base24; Cost: Free">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!--Android app icon-->
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#282C34" />
+
+	<!--iOS touch icon-->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/appicons/square-180.png">
+
+	<!--Bookmark, Browser favicon-->
+	<link rel="icon" type="image/png" sizes="256x256" href="images/appicons/squircle-256.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/appicons/squircle-256.png">
+
+	<!--Windows 8, 10 tile -->
+	<meta name="msapplication-TileColor" content="#282C34">
+	<meta name="msapplication-TileImage" sizes="150x150" content="images/appicons/square-180.png">
+	<meta name="msapplication-starturl" content="/">
+
+	<!--Title-->
+	<title>README</title>
+
+
+</head>
+
+<body>
+
+	<div class="section--nav-bar c-accent--1 border">
+
+		<div class="app-bar">
+			<div class="section__content">
+				<div class="left">
+					<h1>Base24</h1>
+				</div>
+				<div class="pair right">
+					<a href="info.html">
+
+						<h1>&#xf449;</h1>
+					</a>
+					<a href="settings.html">
+
+						<h1>&#xf423;</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<nav id="js-nav">
+			<ul class="nav__content" id="js-nav__content">
+				<li>
+					<a href="index.html" >Base24 Home</a>
+				</li>
+				<li>
+					<a href="readme.html" class="current">README</a>
+				</li>
+
+			</ul>
+			<a class="overflow" id="js-overflow">More...</a>
+			<ul class="nav__overflow" id="js-nav__overflow">
+			</ul>
+		</nav>
+	</div>
+
+	<div class="buffer--nav-bar">
+	</div>
+
+	<div id="js-toast" >
+		<div><p id="js-toast__text" class="c-toast"></p></div>
+	</div>
+
+	<div class="section c-primary">
+		<div class="section__content">
+
+
+	<h1>Reason for this repo</h1>
+	<p>Base16 doesn&apos;t provide bright colours that are used in terminal emulators. e.g. bright red. Base24 does. In
+		addition to this, Base24 provides darker background variants. This will also be part of a GitHub organization.
+	</p>
+
+
+	<h1>Compatibility</h1>
+	<p>The aim of this project is to offer compatibility with base16. The only limitation is that a base24 builder is
+		needed for base24 templates.</p>
+
+	<table>
+		<tbody><tr>
+			<th>Theme</th>
+			<th>=&gt;</th>
+			<th>Template</th>
+			<th>Base16 Builder</th>
+			<th>Base24 Builder</th>
+		</tr>
+		<tr>
+			<td>Base16</td>
+			<td>=&gt;</td>
+			<td>Base16</td>
+			<td>&#x2714;</td>
+			<td>&#x2714;</td>
+		</tr>
+		<tr>
+			<td>Base24</td>
+			<td>=&gt;</td>
+			<td>Base16</td>
+			<td>&#x2714;</td>
+			<td>&#x2714;</td>
+		</tr>
+		<tr>
+			<td>Base16</td>
+			<td>=&gt;</td>
+			<td>Base24</td>
+			<td>&#x274C;</td>
+			<td>&#x2714;</td>
+		</tr>
+		<tr>
+			<td>Base24</td>
+			<td>=&gt;</td>
+			<td>Base24</td>
+			<td>&#x274C;</td>
+			<td>&#x2714;</td>
+		</tr>
+	</tbody></table>
+
+
+	<p>Thank you to <a href="https://github.com/chriskempson/base16/">https://github.com/chriskempson/base16/</a> (MIT)
+		for Base16</p>
+
+	<h1>Why Base24/ Base16 is useful</h1>
+	<p>Base24/ Base16 can be used to easily generate your favourite theme for your favourite application. Many of the
+		template repositories provide theme files that you can copy/ import into said application.</p>
+
+	<h1>Documentation</h1>
+	<ul>
+	<li><a href="https://github.com/Base24/base24/blob/master/styling.md">Styling Guidelines</a></li>
+		<li><a href="https://github.com/Base24/base24/blob/master/builder.md">Builder Guidelines</a></li>
+			<li><a href="https://github.com/Base24/base24/blob/master/file.md">File Guidelines</a></li>
+				<li><a href="https://github.com/Base24/base24/blob/master/roadmap.md&quot;&quot;">Roadmap/ TODO</a></li>
+</ul>
+
+	<h1>Template Repositories</h1>
+	<p>To add your own template, submit a pull request to URL. Repository
+		naming scheme: base24-[template-name] (with dashes as separators).</p>
+
+	<h1>Scheme Repositories</h1>
+	<p>To add your own scheme, submit a pull request to URL. Repository naming
+		scheme: base24-[scheme-name]-scheme (with dashes as separators).</p>
+
+	<h1>Builder Repositories</h1>
+	<p>Repository naming scheme: base24-builder-[language] (with dashes as separators). The separate headings are the
+		latest versions of the spec supported by each builder.</p>
+
+	<h2>Base24 0.1.0 (Feb 2020)</h2>
+	<p>base00 through base0F are identical to base16. See the table below for the Base24 fall-backs</p>
+
+
+	<table>
+		<tbody><tr><th>Base24</th><th>Base16</th></tr>
+		<tr><td>Base10</td><td>Base00</td></tr>
+		<tr><td>Base11</td><td>Base00</td></tr>
+		<tr><td>Base12</td><td>Base08</td></tr>
+		<tr><td>Base13</td><td>Base0A</td></tr>
+		<tr><td>Base14</td><td>Base0B</td></tr>
+		<tr><td>Base15</td><td>Base0C</td></tr>
+		<tr><td>Base16</td><td>Base0D</td></tr>
+		<tr><td>Base17</td><td>Base0E</td></tr>
+	</tbody></table>
+
+
+		</div>
+	</div>
+
+	<div class="app-bar c-accent--1  border">
+		<div class="section__content">
+			<h3 style="width: 100%; text-align: center;">Made with ❤ - MIT Base24</h3>
+		</div>
+	</div>
+
+
+	<script src="scripts/script.js"></script>
+	<script src="scripts/navbar.js"></script>
+
+
+
+</body>
+
+</html>
