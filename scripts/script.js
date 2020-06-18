@@ -129,7 +129,7 @@ function search() { // eslint-disable-line no-unused-vars
 	let txtValue;
 	let input = document.getElementById("input");
 	let filter = input.value.toUpperCase();
-	let ul = document.getElementById("output");
+	let ul = document.getElementById("search-results");
 	let li = ul.getElementsByTagName("li");
 	let shown = 0;
 	// Loop through all list items, and hide those who don't match the search
@@ -177,10 +177,10 @@ function templatesFromList(list) {
 async function populateTemplates() { // eslint-disable-line no-unused-vars
 	let file = await grabFile("https://cdn.jsdelivr.net/gh/Base24/base24-templates-source@master/list.yaml");
 	let templates = templatesFromList(file);
-	let ul = document.getElementById("output");
+	let ul = document.getElementById("search-results");
 	let appendContent = "";
 	for (let i = 0; i < templates.length; i++) {
-		appendContent += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
+		appendContent += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"border c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
 	}
 	ul.innerHTML = appendContent;
 	let label = document.getElementById("input-label");
@@ -195,10 +195,10 @@ async function populateTemplates() { // eslint-disable-line no-unused-vars
 async function populateStyles() { // eslint-disable-line no-unused-vars
 	let file = await grabFile("https://cdn.jsdelivr.net/gh/Base24/base24-schemes-source@master/list.yaml");
 	let templates = templatesFromList(file);
-	let ul = document.getElementById("output");
+	let ul = document.getElementById("search-results");
 	let appendContent = "";
 	for (let i = 0; i < templates.length; i++) {
-		appendContent += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
+		appendContent += ("<li><a href=\""+ templates[i][1].trim() +"\"><div class=\"border c-accent--"+ Math.floor(Math.pow(i, 2.9) % 4) + "\" ><div><h3>"+ templates[i][0] +"</h3><p>Base: "+ (templates[i][3]? "<b>24&#xf42e;</b>": "<b>16</b>") +" | Author: "+ templates[i][2] +"</p></div></div></a></li>");
 	}
 	ul.innerHTML = appendContent;
 	let label = document.getElementById("input-label");
