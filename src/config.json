@@ -57,6 +57,7 @@
 	"files": [
 		"index.sections.html",
 		"styles.sections.html",
+		"builder.sections.html",
 		"readme.sections.html"
 	]
 }

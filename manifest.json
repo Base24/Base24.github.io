@@ -48,6 +48,17 @@
 			]
 		},
 		{
+			"name": "Builder",
+			"url": "/builder.html",
+			"icons": [
+				{
+					"src": "/images/shorticons/builder.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
 			"name": "README",
 			"url": "/readme.html",
 			"icons": [

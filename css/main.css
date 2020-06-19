@@ -55,17 +55,24 @@ body {
 	overflow-wrap: break-word;
 }
 
-body::-webkit-scrollbar {
+textarea {
+	scrollbar-width: calc((14px + 0.35vw) * var(--text-mod) * 1.1);
+	scrollbar-color: var(--var-c-text) var(--var-c-secondary);
+}
+
+body::-webkit-scrollbar, textarea::-webkit-scrollbar {
 	width: calc((14px + 0.35vw) * var(--text-mod) * 1.1);
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
 	background: var(--var-c-secondary);
+	border-radius: 1em;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
 	border: calc((14px + 0.35vw) * var(--text-mod) * 0.15) solid var(--var-c-secondary);
 	background-color: var(--var-c-text);
+	border-radius: 1em;
 }
 
 /* CSS for iOS devices only
@@ -105,11 +112,11 @@ h4 {
 	font-size: 1.1em;
 }
 
-button, .css-file, form select, progress, .border, body::-webkit-scrollbar-thumb {
+button, .css-file, form select, progress, .border, body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb, #js-toast>div>p {
 	box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.6), inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.6);
 }
 
-form textarea, form input, form select, .code pre, body::-webkit-scrollbar-track {
+form textarea, form input, .code pre, body::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
 	box-shadow: inset 0.1em 0.1em 0.1em 0 rgba(0, 0, 0, 0.4), inset -0.1em -0.1em 0.1em 0 rgba(255, 255, 255, 0.4);
 }
 
@@ -659,9 +666,7 @@ audio {
 }
 
 #js-toast>div>p {
-	border: 0.15em;
-	border-style: solid;
-	border-radius: var(--const-toast-rounding) 0 var(--const-toast-rounding) 0;
+	border-radius: var(--const-toast-rounding);
 	padding: 1em;
 }
 

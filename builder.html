@@ -46,14 +46,14 @@
 	<meta name="msapplication-starturl" content="/">
 
 	<!--Title-->
-	<title>Templates</title>
+	<title>Builder</title>
 
 
 </head>
 
 <body>
 
-	<div class="section--nav-bar c-accent--0 border">
+	<div class="section--nav-bar c-accent--2 border">
 
 		<div class="app-bar">
 			<div class="section__content">
@@ -76,13 +76,13 @@
 		<nav id="js-nav">
 			<ul class="nav__content" id="js-nav__content">
 				<li>
-					<a href="index.html" class="current">Templates</a>
+					<a href="index.html" >Templates</a>
 				</li>
 				<li>
 					<a href="styles.html" >Styles</a>
 				</li>
 				<li>
-					<a href="builder.html" >Builder</a>
+					<a href="builder.html" class="current">Builder</a>
 				</li>
 				<li>
 					<a href="readme.html" >README</a>
@@ -105,34 +105,76 @@
 	<div class="section c-primary">
 		<div class="section__content">
 
-	<div class="img--content-wide">
-		<img src="images/page/name.png" alt="Base24 Logo">
-	</div>
-	<p></p>
-	<div class="pair">
-		<button onclick="location.href=&apos;https://github.com/Base24/base24/stargazers&apos;;">&#xF41E; Star</button>
-		<button onclick="location.href=&apos;https://github.com/Base24/base24&apos;;">&#xF41E; View Repo</button>
-	</div>
-
-		</div>
-	</div>
-	<div class="section c-secondary">
-		<div class="section__content">
-
-	<h1>Find themes for your favourite app:</h1>
+	<h1>Combine a template and a scheme to generate a theme:</h1>
 	<form>
-		<label id="input-label" for="input">
-			Search: (loading...)
+		<p>Use custom template?</p>
+		<label class="css-radio" for="custom-template">
+			Yes
+			<input type="radio" name="custom-template" value="1" id="custom-template">
+			<span class="check-mark"></span><br>
+			<label class="css-file" for="template">
+				&#xF47B; Upload
+				<input type="file" id="template" onchange="uploadTemplate()">
+			</label>
+			<textarea style="display: none;" rows="20" cols="1" id="custom-template-data"></textarea>
 		</label>
-		<input type="text" onkeyup="search()" placeholder="Search applications..." id="input">
+		<label class="css-radio" for="custom-template-no">
+			No
+			<input type="radio" name="custom-template" value="2" id="custom-template-no" checked="checked">
+			<span class="check-mark"></span><br>
+			<label for="templates-list">
+				Template
+			</label>
+			<select id="templates-list">
+
+			</select>
+		</label>
+
+
+		<p>Use custom scheme?</p>
+		<label class="css-radio" for="custom-scheme">
+			Yes
+			<input type="radio" name="custom-scheme" value="1" id="custom-scheme">
+			<span class="check-mark"></span><br>
+			<label class="css-file" for="scheme">
+				&#xF47B; Upload
+				<input type="file" id="scheme" onchange="uploadScheme()">
+			</label>
+			<textarea style="display: none;" rows="20" cols="1" id="custom-scheme-data"></textarea>
+		</label>
+		<label class="css-radio" for="custom-scheme-no">
+			No
+			<input type="radio" name="custom-scheme" value="2" id="custom-scheme-no" checked="checked">
+			<span class="check-mark"></span><br>
+			<label for="schemes-list">
+				Scheme
+			</label>
+			<select id="schemes-list">
+
+			</select>
+		</label>
+
+		<label for="filename">
+			Filename:
+		</label>
+		<input type="text" placeholder="Filename" id="filename">
+
+		<label for="output">
+			Output:
+		</label>
+		<textarea rows="20" cols="1" id="output"></textarea>
 	</form>
-		<ul id="search-results">
-		</ul>
+	<div class="pair">
+		<button onclick="run()">&#xF489; Run</button>
+		<button onclick="copy()">&#xF429; Copy Output </button>
+	</div>
+	<button onclick="downloadTheme()">&#xF47C; Download</button>
+
 
 		</div>
 	</div>
 
-	<div class="app-bar c-accent--0  border">
+	<div class="app-bar c-accent--2  border">
 		<div class="section__content">
 			<h3 style="width: 100%; text-align: center;">Made with ❤ - MIT Base24</h3>
 		</div>
@@ -143,7 +185,7 @@
 	<script src="scripts/navbar.js"></script>
 
 	<script>
-	populateTemplates()
+	populateSchemeAndTemplates()
 </script>
 
 

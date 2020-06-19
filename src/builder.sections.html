@@ -1,0 +1,71 @@
+<title>Builder</title>
+<section>
+	<h1>Combine a template and a scheme to generate a theme:</h1>
+	<form>
+		<p>Use custom template?</p>
+		<label class="css-radio" for="custom-template">
+			Yes
+			<input type="radio" name="custom-template" value="1" id="custom-template">
+			<span class="check-mark"></span><br>
+			<label class="css-file" for="template">
+				&#xf47b; Upload
+				<input type="file" id="template" onchange="uploadTemplate()" />
+			</label>
+			<textarea style="display: none;" rows="20" cols="1" id="custom-template-data"></textarea>
+		</label>
+		<label class="css-radio" for="custom-template-no">
+			No
+			<input type="radio" name="custom-template" value="2" id="custom-template-no" checked="checked">
+			<span class="check-mark"></span><br>
+			<label for="templates-list">
+				Template
+			</label>
+			<select id="templates-list">
+
+			</select>
+		</label>
+
+
+		<p>Use custom scheme?</p>
+		<label class="css-radio" for="custom-scheme">
+			Yes
+			<input type="radio" name="custom-scheme" value="1" id="custom-scheme">
+			<span class="check-mark"></span><br>
+			<label class="css-file" for="scheme">
+				&#xf47b; Upload
+				<input type="file" id="scheme" onchange="uploadScheme()" />
+			</label>
+			<textarea style="display: none;" rows="20" cols="1" id="custom-scheme-data"></textarea>
+		</label>
+		<label class="css-radio" for="custom-scheme-no">
+			No
+			<input type="radio" name="custom-scheme" value="2" id="custom-scheme-no" checked="checked">
+			<span class="check-mark"></span><br>
+			<label for="schemes-list">
+				Scheme
+			</label>
+			<select id="schemes-list">
+
+			</select>
+		</label>
+
+		<label for="filename">
+			Filename:
+		</label>
+		<input type="text" placeholder="Filename" id="filename">
+
+		<label for="output">
+			Output:
+		</label>
+		<textarea rows="20" cols="1" id="output"></textarea>
+	</form>
+	<div class="pair">
+		<button onclick="run()"> Run</button>
+		<button onclick="copy()"> Copy Output </button>
+	</div>
+	<button onclick="downloadTheme()"> Download</button>
+
+</section>
+<inline-script>
+	populateSchemeAndTemplates()
+</inline-script>
