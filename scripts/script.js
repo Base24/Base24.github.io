@@ -309,7 +309,7 @@ function generateTheme(template, rawScheme, slug) {
 			parts[1] = parts[1].trim();
 			for (let j = 0; j < 2; j++) {
 				if (parts[j].slice(0, 1) === "\"" || parts[j].slice(0, 1) === "'") {
-					parts[j] = parts[j].slice(1, parts[j].length -2);
+					parts[j] = parts[j].slice(1, parts[j].length - 1);
 				}
 			}
 			scheme[parts[0]] = parts[1];
