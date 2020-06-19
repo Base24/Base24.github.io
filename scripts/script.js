@@ -249,7 +249,7 @@ async function run() { // eslint-disable-line no-unused-vars
 	// Offline template?
 	let template;
 	if (grabBool("custom-template", false)) {
-		template = document.getElementById("custom-template-data").value;
+		template = document.getElementById("custom-template-data").value.split("\n");
 	} else {
 		// Get the template - there always seems to be a templates/default.mustache
 		// so try that
@@ -263,7 +263,7 @@ async function run() { // eslint-disable-line no-unused-vars
 	// Offline scheme?
 	let scheme;
 	if (grabBool("custom-scheme", false)) {
-		scheme = document.getElementById("custom-scheme-data").value;
+		scheme = document.getElementById("custom-scheme-data").value.split("\n");
 	} else {
 		// Try and get the scheme
 		// Try scheme.yaml
