@@ -196,7 +196,9 @@ async function populateStyles() { // eslint-disable-line no-unused-vars
 async function grabFile(url) {
 	return new Promise(function(resolve, reject) {
 		const rawFile = new XMLHttpRequest();
-		rawFile.open("GET", url);
+		// always fetch the most recent version:
+		// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Bypassing_the_cache
+		rawFile.open("GET", url + ((/\?/).test(url) ? "&" : "?") + (new Date()).getTime());
 		rawFile.onloadend = function() {
 			if (rawFile.status === 404) {
 				reject(Error(url + " replied 404"));
